@@ -86,7 +86,20 @@ function seleccionarMusica() {
         break;
     }
   }
-
+  function calcularDuracionEjercicios() {
+    const minutosTotales = duracionSesion
+    const cantidadEjercicios = posturas.length
+    const minutosPorEjercicio = minutosTotales / cantidadEjercicios
+  
+    let mensaje = "Duración de cada ejercicio: " + minutosPorEjercicio + " minutos\n"
+    mensaje += "Ejercicios a realizar:\n"
+  
+    for (let i = 0; i < cantidadEjercicios; i++) {
+      mensaje += (i + 1) + ". " + posturas[i].postura + " (" + minutosPorEjercicio + " minutos)\n"
+    }
+    alert(mensaje)
+  }
+  
 function mostrarResultados() {
     let mensaje = "¡Tu sesión de Kundalini Yoga ha comenzado!\n"
     mensaje += "Duración: " + duracionSesion + " minutos\n"
@@ -98,6 +111,7 @@ seleccionarDuracion()
 seleccionarEjercicio()
 seleccionarMusica()
 mostrarResultados()
+calcularDuracionEjercicios()
 
 let respuesta = confirm("¿Estás seguro de que deseas salir?")
 if (respuesta) {

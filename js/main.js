@@ -1,159 +1,168 @@
-let duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"))
-while (duracionSesion < 10 || duracionSesion > 60) {
-  alert("LA duracion debe ser entre 10 y 60 minutos")
-  duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"))
-}
-
-let tipoEjercicio = "respiración, estiramientos, meditación"
-let musicaFondo = "clásica, relajante, instrumental"
+let duracionSesion;
+let tipoEjercicio = "respiración, estiramientos, meditación";
+let musicaFondo = "clásica, relajante, instrumental";
+const posturas = [
+    { postura: "guerrero", duracion: 10, nivel: "intermedio" },
+    { postura: "perro boca abajo", duracion: 10, nivel: "fácil" },
+    { postura: "guerrero invertido", duracion: 10, nivel: "intermedio" },
+    { postura: "pájaro", duracion: 10, nivel: "intermedio" }
+];
+const accesorios = [];
+let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [
+    "Las palabras tienen algo mágico, a veces ni ellas mismas pueden expresar lo que sienten...",
+    "¡Che! Gracias por la sesión del otro día, realmente marcó un antes y un después para mí.",
+    "Hola, soy Alexia. La experiencia con innerdance fue una verdadera transformación para mí."
+];
 
 function seleccionarEjercicio() {
-  let ejercicio = parseInt(prompt("Seleccione el número del tipo de ejercicio que desea: \n 1. Respiración \n 2. Estiramientos \n 3. Meditación \n 4. Salir"))
-  switch (ejercicio) {
-    case 1:
-      alert("Ha seleccionado respiración.")
-      tipoEjercicio = "respiración"
-      break;
-    case 2:
-      alert("Ha seleccionado estiramientos.")
-      tipoEjercicio = "estiramientos"
-      break;
-    case 3:
-      alert("Ha seleccionado meditación.")
-      tipoEjercicio = "meditación"
-      break;
-    case 4:
-      alert("Gracias por utilizar nuestro simulador de Kundalini Yoga.")
-      break;
-    default:
-      alert("Opción inválida. Por favor seleccione una opción válida.")
-      seleccionarEjercicio()
-      break;
-  }
-}
-function seleccionarMusica() {
-  let musica = parseInt(prompt("Seleccione el número de la música de fondo que desea: \n 1. Música clásica \n 2. Música relajante \n 3. Sonidos de la naturaleza \n 4. Salir"))
-  switch (musica) {
-    case 1:
-      alert("Ha seleccionado música clásica.")
-      musicaFondo = "clásica"
-      break;
-    case 2:
-      alert("Ha seleccionado música relajante.")
-      musicaFondo = "relajante"
-      break;
-    case 3:
-      alert("Ha seleccionado sonidos de la naturaleza.")
-      musicaFondo = "naturaleza"
-      break;
-    case 4:
-      alert("Gracias por utilizar nuestro simulador de Kundalini Yoga.")
-      break;
-    default:
-      alert("Opción inválida. Por favor seleccione una opción válida.")
-      seleccionarMusica()
-      break;
-  }
-}
-const postura1 = {
-  postura: "guerrero",
-  duracion: 10, 
-  nivel: "intermedio",
-}
-const postura2 = {
-  postura: "perro boca abajo",
-  duracion: 10, 
-  nivel: "facil",
-}
-const postura3 = {
-  postura: "guerrero invertido",
-  duracion: 10, 
-  nivel: "intermedio",
-}
-const postura4 = {
-  postura: "pájaro",
-  duracion: 10, 
-  nivel: "intermedio",
-}
-const posturas = [postura1, postura2, postura3, postura4]
-console.log(posturas)
-
-
-  function calcularDuracionEjercicios() {
-    const minutosTotales = duracionSesion
-    const cantidadEjercicios = posturas.length
-    const minutosPorEjercicio = minutosTotales / cantidadEjercicios
-  
-    let mensaje = "Duración de cada ejercicio: " + minutosPorEjercicio + " minutos\n"
-    mensaje += "Ejercicios a realizar:\n"
-  
-    for (let i = 0; i < cantidadEjercicios; i++) {
-      mensaje += (i + 1) + ". " + posturas[i].postura + " (" + minutosPorEjercicio + " minutos)\n"
+    let ejercicio = parseInt(prompt("Seleccione el número del tipo de ejercicio que desea: \n 1. Respiración \n 2. Estiramientos \n 3. Meditación \n 4. Salir"));
+    switch (ejercicio) {
+        case 1:
+            tipoEjercicio = "respiración";
+            break;
+        case 2:
+            tipoEjercicio = "estiramientos";
+            break;
+        case 3:
+            tipoEjercicio = "meditación";
+            break;
+        case 4:
+            break;
+        default:
+            alert("Opción inválida. Por favor seleccione una opción válida.");
+            seleccionarEjercicio();
+            break;
     }
-    alert(mensaje)
-  }
-  
-function mostrarResultados() {
-    let mensaje = "¡Tu sesión de Kundalini Yoga ha comenzado!\n"
-    mensaje += "Duración: " + duracionSesion + " minutos\n"
-    mensaje += "Tipo de ejercicio: " + tipoEjercicio + "\n"
-    mensaje += "Música de fondo: " + musicaFondo + "\n"
-    alert(mensaje);
 }
 
+function seleccionarMusica() {
+    let musica = parseInt(prompt("Seleccione el número de la música de fondo que desea: \n 1. Música clásica \n 2. Música relajante \n 3. Sonidos de la naturaleza \n 4. Salir"));
+    switch (musica) {
+        case 1:
+            musicaFondo = "clásica";
+            break;
+        case 2:
+            musicaFondo = "relajante";
+            break;
+        case 3:
+            musicaFondo = "naturaleza";
+            break;
+        case 4:
+            break;
+        default:
+            alert("Opción inválida. Por favor seleccione una opción válida.");
+            seleccionarMusica();
+            break;
+    }
+}
 
-seleccionarEjercicio()
-seleccionarMusica()
-mostrarResultados()
-calcularDuracionEjercicios()
+function calcularDuracionEjercicios() {
+    const minutosTotales = duracionSesion;
+    const cantidadEjercicios = posturas.length;
+    const minutosPorEjercicio = minutosTotales / cantidadEjercicios;
+
+    let mensaje = "Duración de cada ejercicio: " + minutosPorEjercicio + " minutos\n";
+    mensaje += "Ejercicios a realizar:\n";
+
+    for (let i = 0; i < cantidadEjercicios; i++) {
+        mensaje += (i + 1) + ". " + posturas[i].postura + " (" + minutosPorEjercicio + " minutos)\n";
+    }
+
+    return mensaje;
+}
+
+function mostrarResultados() {
+    const divResultadoSesion = document.getElementById('resultadoSesion');
+    divResultadoSesion.classList.remove('hidden');
+    document.getElementById('duracionSesion').textContent = "Duración de la sesión: " + duracionSesion + " minutos";
+    document.getElementById('tipoEjercicio').textContent = "Tipo de ejercicio: " + tipoEjercicio;
+    document.getElementById('musicaFondo').textContent = "Música de fondo: " + musicaFondo;
+    document.getElementById('duracionEjercicios').textContent = calcularDuracionEjercicios();
+    mostrarComentarios();
+}
 
 class Accesorio {
-  constructor(tipo, material, esNecesario) {
-    this.tipo = tipo;
-    this.material = material;
-    this.esNecesario = esNecesario;
-  }
-
-  mostrarInfo() {
-    console.log("Accesorio: " + this.tipo);
-    console.log("Material: " + this.material);
-    console.log("¿Es necesario? " + (this.esNecesario ? "Sí" : "No"));
-  }
-}
-
-const accesorios = [];
-const cargarAccesorio = () => {
-  let tipo = prompt("Ingrese el tipo de accesorio (ej: Esterilla, Bloque, Cinturón)");
-  let material = prompt("Ingrese el material del accesorio (ej: Goma, Corcho, Algodón)");
-  let esNecesario = prompt("¿Es necesario para la sesión? (sí/no)").toLowerCase() === "sí";
-
-  const accesorio = new Accesorio(tipo, material, esNecesario);
-  accesorios.push(accesorio);
-  accesorio.mostrarInfo();
-};
-
-const verAccesorios = () => {
-  if (accesorios.length === 0) {
-    alert("No hay accesorios añadidos");
-  } else {
-    for (const accesorio of accesorios) {
-      accesorio.mostrarInfo();
+    constructor(tipo, material, esNecesario) {
+        this.tipo = tipo;
+        this.material = material;
+        this.esNecesario = esNecesario;
     }
-  }
-};
 
-let menu = parseInt(prompt("Bienvenido! Ingrese 1 para ver los accesorios, 2 para cargar un accesorio o 3 para salir"));
-while(menu !== 3) {
-  switch(menu) {
-    case 1: 
-      verAccesorios();
-      break;
-    case 2: 
-      cargarAccesorio();
-      break;
-    default: 
-      alert("Opción incorrecta");
-      break;   
-  }
-  menu = parseInt(prompt("Ingrese 1 para ver los accesorios, 2 para cargar un accesorio o 3 para salir"));
+    mostrarInfo() {
+        return `
+            <p>Accesorio: ${this.tipo}</p>
+            <p>Material: ${this.material}</p>
+            <p>¿Es necesario? ${this.esNecesario ? "Sí" : "No"}</p>
+        `;
+    }
 }
+
+function cargarAccesorio() {
+    let tipo = prompt("Ingrese el tipo de accesorio (ej: Esterilla, Bloque, Cinturón)");
+    let material = prompt("Ingrese el material del accesorio (ej: Goma, Corcho, Algodón)");
+    let esNecesario = prompt("¿Es necesario para la sesión? (sí/no)").toLowerCase() === "sí";
+
+    const accesorio = new Accesorio(tipo, material, esNecesario);
+    accesorios.push(accesorio);
+    mostrarAccesorios();
+}
+
+function verAccesorios() {
+    mostrarAccesorios();
+}
+
+function mostrarAccesorios() {
+    const divAccesorios = document.getElementById('accesorios');
+    if (accesorios.length === 0) {
+        divAccesorios.innerHTML = "<p>No hay accesorios añadidos</p>";
+    } else {
+        divAccesorios.innerHTML = '<h2>Accesorios:</h2>';
+        for (const accesorio of accesorios) {
+            divAccesorios.innerHTML += accesorio.mostrarInfo();
+        }
+    }
+}
+
+function mostrarComentarios() {
+    const divComentarios = document.getElementById('comentarios');
+    divComentarios.innerHTML = '<h2>Comentarios:</h2>';
+    comentarios.forEach((comentario, index) => {
+        divComentarios.innerHTML += `<p>${index + 1}. ${comentario}</p>`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('iniciarSesion').addEventListener('click', () => {
+        duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"));
+        while (duracionSesion < 10 || duracionSesion > 60) {
+            alert("La duración debe ser entre 10 y 60 minutos");
+            duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"));
+        }
+
+        seleccionarEjercicio();
+        seleccionarMusica();
+        mostrarResultados();
+    });
+
+    document.getElementById('verAccesorios').addEventListener('click', verAccesorios);
+    document.getElementById('cargarAccesorio').addEventListener('click', cargarAccesorio);
+
+    document.getElementById('agregarComentario').addEventListener('click', () => {
+        document.getElementById('formularioComentario').classList.remove('hidden');
+    });
+
+    document.getElementById('guardarComentario').addEventListener('click', () => {
+        const nuevoComentario = document.getElementById('nuevoComentario').value;
+        if (nuevoComentario) {
+            comentarios.push(nuevoComentario);
+            localStorage.setItem('comentarios', JSON.stringify(comentarios));
+            document.getElementById('formularioComentario').classList.add('hidden');
+            document.getElementById('nuevoComentario').value = '';
+            mostrarComentarios();
+        }
+    });
+
+    document.getElementById('cancelarComentario').addEventListener('click', () => {
+        document.getElementById('formularioComentario').classList.add('hidden');
+    });
+});

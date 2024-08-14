@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./js/main.js"></script>
-    <title>Kundalini</title>
+    <title>Simulador de Kundalini Yoga</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
-    <h1>Malena Gherpelli</h1>
-    <p>Este simulador te guiará a través de una sesión de meditación y yoga personalizada.</p>
+    <div class="container">
+        <h1>Simulador de Kundalini Yoga</h1>
+        <button id="iniciarSesion">Iniciar Sesión</button>
+        
+        <div id="resultadoSesion" class="hidden">
+            <p id="duracionSesion"></p>
+            <p id="tipoEjercicio"></p>
+            <p id="musicaFondo"></p>
+            <p id="duracionEjercicios"></p>
+            
+            <div class="comentarios" id="comentarios"></div>
+            <button id="agregarComentario">Agregar comentario</button>
+            <button id="verAccesorios">Ver Accesorios</button>
+            <button id="cargarAccesorio">Cargar Accesorio</button>
+        </div>
+        
+        
+        <div id="formularioComentario" class="hidden">
+            <h2>Agregar Comentario</h2>
+            <textarea id="nuevoComentario" rows="4" cols="50"></textarea><br>
+            <button id="guardarComentario">Guardar Comentario</button>
+            <button id="cancelarComentario">Cancelar</button>
+        </div>
+        
+        <div id="accesorios" class="hidden"></div>
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #6a0dad; /* Color lila */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #ff66b2; /* Color rosa */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3385; /* Rosa más oscuro para el hover */
+}
+
+/* Estilo de las secciones */
+section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #6a0dad; /* Color lila */
+    font-size: 1.5em;
+}
+
+/* Estilo de los comentarios */
+.comentarios {
+    background-color: #e6e6ff; /* Color lila claro */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.comentarios h2 {
+    color: #6a0dad; /* Color lila */
+}
+
+.comentarios p {
+    color: #333;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"], textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Estilo para el contenedor de accesorios */
+.accesorios-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

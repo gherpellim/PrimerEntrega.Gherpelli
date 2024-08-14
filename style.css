@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #ff99cc; /* Rosa claro */
+    background-color: #ff99cc; 
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -28,7 +28,7 @@ header h1 {
 }
 
 button {
-    background-color: #ff66b2; /* Rosa más intenso */
+    background-color: #ff66b2; 
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -38,13 +38,13 @@ button {
     font-size: 1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: block;
-    width: calc(100% - 40px); /* Ajuste para centrado */
-    max-width: 200px; /* Tamaño máximo del botón */
-    margin: 10px auto; /* Centrar botón horizontalmente */
+    width: calc(100% - 40px); 
+    max-width: 200px; 
+    margin: 10px auto; 
 }
 
 button:hover {
-    background-color: #ff3385; /* Rosa oscuro */
+    background-color: #ff3385; 
     transform: scale(1.05);
 }
 
@@ -57,24 +57,24 @@ section {
 }
 
 section h2 {
-    color: #ff66b2; /* Rosa claro */
+    color: #ff66b2; 
     font-size: 1.75em;
     font-weight: bold;
     margin-bottom: 15px;
-    text-align: center; /* Centrar título */
+    text-align: center; 
 }
 
 .comentarios {
-    background-color: #f0f0f0; /* Gris claro */
+    background-color: #f0f0f0; 
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comentarios h2 {
-    color: #ff66b2; /* Rosa claro */
+    color: #ff66b2; 
     font-size: 1.5em;
-    text-align: center; /* Centrar título */
+    text-align: center; 
 }
 
 .comentarios p {

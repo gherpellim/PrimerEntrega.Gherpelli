@@ -1,12 +1,14 @@
 let duracionSesion;
 let tipoEjercicio = "respiración, estiramientos, meditación";
 let musicaFondo = "clásica, relajante, instrumental";
+
 const posturas = [
     { postura: "guerrero", duracion: 10, nivel: "intermedio" },
     { postura: "perro boca abajo", duracion: 10, nivel: "fácil" },
     { postura: "guerrero invertido", duracion: 10, nivel: "intermedio" },
     { postura: "pájaro", duracion: 10, nivel: "intermedio" }
 ];
+
 const accesorios = [];
 let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [
     "Las palabras tienen algo mágico, a veces ni ellas mismas pueden expresar lo que sienten...",

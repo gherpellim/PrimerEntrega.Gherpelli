@@ -1,67 +1,80 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f7f7f7;
     color: #333;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
 header {
-    background-color: #6a0dad; 
-    color: white;
+    background-color: #ff99cc; /* Rosa claro */
+    color: #fff;
     padding: 20px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    font-weight: bold;
 }
 
 button {
-    background-color: #ff66b2; 
-    color: white;
+    background-color: #ff66b2; /* Rosa más intenso */
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 8px;
+    padding: 12px 24px;
     margin: 10px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: calc(100% - 40px); /* Ajuste para centrado */
+    max-width: 200px; /* Tamaño máximo del botón */
+    margin: 10px auto; /* Centrar botón horizontalmente */
 }
 
 button:hover {
-    background-color: #ff3385; 
+    background-color: #ff3385; /* Rosa oscuro */
+    transform: scale(1.05);
 }
 
 section {
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-    color: #6a0dad; 
-    font-size: 1.5em;
+    color: #ff66b2; /* Rosa claro */
+    font-size: 1.75em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center; /* Centrar título */
 }
 
 .comentarios {
-    background-color: #e6e6ff; 
-    border-radius: 8px;
+    background-color: #f0f0f0; /* Gris claro */
+    border-radius: 12px;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comentarios h2 {
-    color: #6a0dad; 
+    color: #ff66b2; /* Rosa claro */
+    font-size: 1.5em;
+    text-align: center; /* Centrar título */
 }
 
 .comentarios p {
@@ -72,17 +85,25 @@ section h2 {
 
 input[type="text"], textarea {
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 12px;
     font-size: 1em;
     width: 100%;
     margin: 10px 0;
+    box-sizing: border-box;
 }
 
 .accesorios-container {
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 12px;
     padding: 20px;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.galeria img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

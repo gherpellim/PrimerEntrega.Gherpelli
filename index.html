@@ -8,32 +8,33 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Simulador de Kundalini Yoga</h1>
+    </header>
+
+    <main>
         <button id="iniciarSesion">Iniciar Sesión</button>
-        
         <div id="resultadoSesion" class="hidden">
             <p id="duracionSesion"></p>
             <p id="tipoEjercicio"></p>
             <p id="musicaFondo"></p>
             <p id="duracionEjercicios"></p>
-            
-            <div class="comentarios" id="comentarios"></div>
-            <button id="agregarComentario">Agregar comentario</button>
-            <button id="verAccesorios">Ver Accesorios</button>
-            <button id="cargarAccesorio">Cargar Accesorio</button>
         </div>
-        
-        
-        <div id="formularioComentario" class="hidden">
-            <h2>Agregar Comentario</h2>
-            <textarea id="nuevoComentario" rows="4" cols="50"></textarea><br>
-            <button id="guardarComentario">Guardar Comentario</button>
-            <button id="cancelarComentario">Cancelar</button>
-        </div>
+
+        <button id="verAccesorios">Ver Accesorios</button>
+        <button id="cargarAccesorio">Cargar Accesorio</button>
         
         <div id="accesorios" class="hidden"></div>
-    </div>
+
+        <button id="agregarComentario">Agregar Comentario</button>
+        <div id="formularioComentario" class="hidden">
+            <textarea id="nuevoComentario" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button id="guardarComentario">Guardar</button>
+            <button id="cancelarComentario">Cancelar</button>
+        </div>
+        <div class="comentarios" id="comentarios"></div>
+    </main>
+
 
 </body>
 </html>

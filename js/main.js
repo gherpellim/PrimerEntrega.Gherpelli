@@ -134,21 +134,6 @@ function mostrarComentarios() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('iniciarSesion').addEventListener('click', () => {
-        duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"));
-        while (duracionSesion < 10 || duracionSesion > 60) {
-            alert("La duración debe ser entre 10 y 60 minutos");
-            duracionSesion = parseInt(prompt("¿Cuántos minutos deseas que dure la sesión?"));
-        }
-
-        seleccionarEjercicio();
-        seleccionarMusica();
-        mostrarResultados();
-    });
-
-    document.getElementById('verAccesorios').addEventListener('click', verAccesorios);
-    document.getElementById('cargarAccesorio').addEventListener('click', cargarAccesorio);
-
     document.getElementById('agregarComentario').addEventListener('click', () => {
         document.getElementById('formularioComentario').classList.remove('hidden');
     });
@@ -167,4 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cancelarComentario').addEventListener('click', () => {
         document.getElementById('formularioComentario').classList.add('hidden');
     });
+
+    mostrarComentarios();
 });

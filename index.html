@@ -5,36 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Kundalini Yoga</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
     <script defer src="js/main.js"></script>
 </head>
 <body>
     <header>
-        <h1>Simulador de Kundalini Yoga</h1>
+        <div class="header-content">
+            <h1>Simulador de Kundalini Yoga</h1>
+            <nav class="nav">
+                <a href="./index.html" class="btn">Inicio</a>
+                <a href="./comentarios.html" class="btn">Comentarios</a>
+                <a href="./servicios.html" class="btn">Servicios</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <button id="iniciarSesion">Iniciar Sesión</button>
-        <div id="resultadoSesion" class="hidden">
-            <p id="duracionSesion"></p>
-            <p id="tipoEjercicio"></p>
-            <p id="musicaFondo"></p>
-            <p id="duracionEjercicios"></p>
+    <section class="intro">
+        <h2>Explora la práctica de Kundalini Yoga</h2>
+        <p>Descubre técnicas, meditaciones y más para mejorar tu bienestar.</p>
+        <div class="buttons">
+            <a href="./comentarios.html" class="btn">Comentarios</a>
+            <a href="./servicios.html" class="btn">Servicios</a>
         </div>
+    </section>
 
-        <button id="verAccesorios">Ver Accesorios</button>
-        <button id="cargarAccesorio">Cargar Accesorio</button>
-        
-        <div id="accesorios" class="hidden"></div>
-
-        <button id="agregarComentario">Agregar Comentario</button>
-        <div id="formularioComentario" class="hidden">
-            <textarea id="nuevoComentario" placeholder="Escribe tu comentario aquí..."></textarea>
-            <button id="guardarComentario">Guardar</button>
-            <button id="cancelarComentario">Cancelar</button>
-        </div>
-        <div class="comentarios" id="comentarios"></div>
-    </main>
-
-
+    <footer>
+        <p>&copy; 2024 Simulador de Kundalini Yoga. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
